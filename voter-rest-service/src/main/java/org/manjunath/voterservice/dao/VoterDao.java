@@ -10,4 +10,6 @@ public interface VoterDao {
 	Voter getVoterById(int id);
 	
 	void addVoter(Voter voter);
+	
+	void updateVoter(Voter voter);
 }

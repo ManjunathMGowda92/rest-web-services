@@ -47,4 +47,11 @@ public class VoterDaoImpl implements VoterDao {
 		}
 	}
 
+	@Override
+	public void updateVoter(Voter voter) {
+		voterMap.put(voter.getId(), voter);
+	}
+	
+	
+
 }
