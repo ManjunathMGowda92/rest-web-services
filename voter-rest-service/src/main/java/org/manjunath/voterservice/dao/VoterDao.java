@@ -9,9 +9,9 @@ public interface VoterDao {
 	
 	Voter getVoterById(int id);
 	
-	void addVoter(Voter voter);
+	Voter addVoter(Voter voter);
 	
-	void updateVoter(Voter voter);
+	Voter updateVoter(Voter voter);
 	
 	Voter deleteVoter(int id);
 }

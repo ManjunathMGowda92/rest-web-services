@@ -24,13 +24,13 @@ public class VoterServiceImpl implements VoterService {
 	}
 
 	@Override
-	public void addVoter(Voter voter) {
-		getDaoInstance().addVoter(voter);
+	public Voter addVoter(Voter voter) {
+		return getDaoInstance().addVoter(voter);
 	}
 
 	@Override
-	public void updateVoter(Voter voter) {
-		getDaoInstance().updateVoter(voter);
+	public Voter updateVoter(Voter voter) {
+		return getDaoInstance().updateVoter(voter);
 	}
 
 	@Override
