@@ -38,4 +38,13 @@ public class VoterDaoImpl implements VoterDao {
 		return voterMap.entrySet().stream().filter(entry -> entry.getKey() == id).findFirst().get().getValue();
 	}
 
+	@Override
+	public void addVoter(Voter voter) {
+		if (!voterMap.containsKey(voter.getId())){
+			voterMap.put(voter.getId(), voter);
+		} else {
+			throw new RuntimeException("Voter alreday exists. Voilation of Unique keys");
+		}
+	}
+
 }
