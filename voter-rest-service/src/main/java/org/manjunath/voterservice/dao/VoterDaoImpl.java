@@ -3,8 +3,10 @@ package org.manjunath.voterservice.dao;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.NoSuchElementException;
 import java.util.stream.Collectors;
 
+import org.manjunath.voterservice.exceptionhandling.VoterNotFoundException;
 import org.manjunath.voterservice.model.Voter;
 
 public class VoterDaoImpl implements VoterDao {
@@ -36,7 +38,14 @@ public class VoterDaoImpl implements VoterDao {
 
 	@Override
 	public Voter getVoterById(int id) {
-		return voterMap.entrySet().stream().filter(entry -> entry.getKey() == id).findFirst().get().getValue();
+		Voter voter = null;
+		try {
+			voter = voterMap.entrySet().stream().filter(entry -> entry.getKey() == id).findFirst().get().getValue();
+		} catch (NoSuchElementException e) {
+			throw new VoterNotFoundException("Voter not found for the id: " + id);
+		}
+
+		return voter;
 	}
 
 	@Override
@@ -61,7 +70,7 @@ public class VoterDaoImpl implements VoterDao {
 			voterMap.remove(id);
 			return voter;
 		}
-		throw new RuntimeException("Voter not found for the id: " + id);
+		throw new VoterNotFoundException("Voter not found for the id: " + id);
 	}
 
 }
