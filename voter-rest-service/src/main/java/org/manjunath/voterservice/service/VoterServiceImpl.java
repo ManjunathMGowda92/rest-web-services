@@ -27,6 +27,11 @@ public class VoterServiceImpl implements VoterService {
 	public void addVoter(Voter voter) {
 		getDaoInstance().addVoter(voter);
 	}
+
+	@Override
+	public void updateVoter(Voter voter) {
+		getDaoInstance().updateVoter(voter);
+	}
 	
 	
 }
