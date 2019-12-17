@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
@@ -23,5 +24,12 @@ public class VoterController {
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<Voter> getVotersList() {
 		return service.getAllVoters();
+	}
+	
+	@GET
+	@Path("/{id}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Voter getVoterById(@PathParam("id") int id){
+		return service.findVoterById(id);
 	}
 }
