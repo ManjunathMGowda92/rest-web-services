@@ -32,6 +32,11 @@ public class VoterServiceImpl implements VoterService {
 	public void updateVoter(Voter voter) {
 		getDaoInstance().updateVoter(voter);
 	}
+
+	@Override
+	public Voter deleteVoterById(int id) {
+		return getDaoInstance().deleteVoter(id);
+	}
 	
 	
 }

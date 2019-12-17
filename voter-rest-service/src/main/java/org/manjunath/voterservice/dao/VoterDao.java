@@ -12,4 +12,6 @@ public interface VoterDao {
 	void addVoter(Voter voter);
 	
 	void updateVoter(Voter voter);
+	
+	Voter deleteVoter(int id);
 }
