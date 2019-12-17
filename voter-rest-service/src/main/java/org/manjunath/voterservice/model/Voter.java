@@ -2,6 +2,9 @@ package org.manjunath.voterservice.model;
 
 import java.io.Serializable;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
 public class Voter implements Serializable{
 	/**
 	 * 
@@ -15,12 +18,12 @@ public class Voter implements Serializable{
 	private String husbandName;
 	private String dob;
 	private String gender;
-	private Addresss addresss;
+	private Address address;
 	
 	public Voter() {}
 	
 	public Voter(int id, String voterId, String firstName, String lastName, String fatherName, String husbandName,
-			String dob, String gender, Addresss addresss) {
+			String dob, String gender, Address address) {
 		this.id = id;
 		this.voterId = voterId;
 		this.firstName = firstName;
@@ -29,7 +32,7 @@ public class Voter implements Serializable{
 		this.husbandName = husbandName;
 		this.dob = dob;
 		this.gender = gender;
-		this.addresss = addresss;
+		this.address = address;
 	}
 
 	public int getId() {
@@ -96,11 +99,11 @@ public class Voter implements Serializable{
 		this.gender = gender;
 	}
 
-	public Addresss getAddresss() {
-		return addresss;
+	public Address getAddresss() {
+		return address;
 	}
 
-	public void setAddresss(Addresss addresss) {
-		this.addresss = addresss;
+	public void setAddresss(Address address) {
+		this.address = address;
 	}	
 }
