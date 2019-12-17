@@ -6,4 +6,6 @@ import org.manjunath.voterservice.model.Voter;
 
 public interface VoterDao {
 	List<Voter> getAllVoters();
+	
+	Voter getVoterById(int id);
 }

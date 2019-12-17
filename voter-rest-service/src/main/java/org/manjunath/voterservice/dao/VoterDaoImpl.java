@@ -33,4 +33,9 @@ public class VoterDaoImpl implements VoterDao {
 		return voterMap.values().stream().collect(Collectors.toList());
 	}
 
+	@Override
+	public Voter getVoterById(int id) {
+		return voterMap.entrySet().stream().filter(entry -> entry.getKey() == id).findFirst().get().getValue();
+	}
+
 }
