@@ -10,9 +10,9 @@ public interface VoterService {
 	
 	Voter findVoterById(int id);
 	
-	void addVoter(Voter voter);
+	Voter addVoter(Voter voter);
 	
-	void updateVoter(Voter voter);
+	Voter updateVoter(Voter voter);
 	
 	Voter deleteVoterById(int id);
 }

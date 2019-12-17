@@ -2,6 +2,7 @@ package org.manjunath.voterservice.exceptionhandling;
 
 public enum VoterExceptionMessages {
 	VOTER_NOT_FOUND_ERROR_MSG("Unable to find the Requested Voter"),
+	REQUESTED_URI_NOT_FOUND_ERROR_MSG("Unable to find the Request URI. Please check"),
 	GENERIC_ERROR_MSG("Something went Wrong. Sorry for the inconvenience");
 	
 	private String errorMessage;

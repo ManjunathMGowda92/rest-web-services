@@ -49,17 +49,16 @@ public class VoterDaoImpl implements VoterDao {
 	}
 
 	@Override
-	public void addVoter(Voter voter) {
+	public Voter addVoter(Voter voter) {
 		if (!voterMap.containsKey(voter.getId())) {
-			voterMap.put(voter.getId(), voter);
-		} else {
-			throw new RuntimeException("Voter alreday exists. Voilation of Unique keys");
+			return voterMap.put(voter.getId(), voter);
 		}
+		throw new RuntimeException("Voter alreday exists. Voilation of Unique keys");
 	}
 
 	@Override
-	public void updateVoter(Voter voter) {
-		voterMap.put(voter.getId(), voter);
+	public Voter updateVoter(Voter voter) {
+		return voterMap.put(voter.getId(), voter);
 	}
 
 	@Override

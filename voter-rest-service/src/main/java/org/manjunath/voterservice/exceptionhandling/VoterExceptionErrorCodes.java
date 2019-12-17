@@ -2,6 +2,7 @@ package org.manjunath.voterservice.exceptionhandling;
 
 public enum VoterExceptionErrorCodes {
 	VOTER_NOT_FOUND_ERROR_CODE("VOTER_101"),
+	REQUESTED_URI_NOT_FOUND_ERROR_CODE("VOTER_404"),
 	GENERIC_ERROR_CODE("VOTER_001");
 	
 	private String errorCode;

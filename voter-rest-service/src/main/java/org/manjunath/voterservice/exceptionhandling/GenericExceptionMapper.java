@@ -15,6 +15,8 @@ public class GenericExceptionMapper implements ExceptionMapper<Throwable> {
 		response.setCustomErrorMessage(VoterExceptionMessages.GENERIC_ERROR_MSG.getErrorMessage());
 		response.setErrorMessage(throwable.getMessage());
 		
+		throwable.printStackTrace();
+		
 		return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
 				.entity(response)
 				.build();
