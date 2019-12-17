@@ -3,6 +3,7 @@ package org.manjunath.voterservice.controller;
 import java.util.List;
 
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
@@ -48,5 +49,12 @@ public class VoterController {
 	@Consumes(MediaType.APPLICATION_JSON)
 	public void updateVoter(@PathParam("id") int id, Voter voter){
 		service.updateVoter(voter);
+	}
+	
+	@DELETE
+	@Path("/{id}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Voter deleteVoter(@PathParam("id") int id){
+		return service.deleteVoterById(id);
 	}
 }

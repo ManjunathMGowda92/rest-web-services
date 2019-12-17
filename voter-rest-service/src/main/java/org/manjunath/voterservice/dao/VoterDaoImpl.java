@@ -10,8 +10,8 @@ import org.manjunath.voterservice.model.Voter;
 public class VoterDaoImpl implements VoterDao {
 	private static VoterDao instance;
 	private static Map<Integer, Voter> voterMap = new HashMap<>();
-	
-	static{
+
+	static {
 		try {
 			instance = new VoterDaoImpl();
 		} catch (IllegalAccessException e) {
@@ -21,10 +21,11 @@ public class VoterDaoImpl implements VoterDao {
 
 	private VoterDaoImpl() throws IllegalAccessException {
 		if (instance != null)
-			throw new IllegalAccessException(getClass().getName()+":Illegal way of accessing. It is a Singleton class");
+			throw new IllegalAccessException(
+					getClass().getName() + ":Illegal way of accessing. It is a Singleton class");
 	}
-	
-	public static VoterDao getInstance(){
+
+	public static VoterDao getInstance() {
 		return instance;
 	}
 
@@ -40,7 +41,7 @@ public class VoterDaoImpl implements VoterDao {
 
 	@Override
 	public void addVoter(Voter voter) {
-		if (!voterMap.containsKey(voter.getId())){
+		if (!voterMap.containsKey(voter.getId())) {
 			voterMap.put(voter.getId(), voter);
 		} else {
 			throw new RuntimeException("Voter alreday exists. Voilation of Unique keys");
@@ -51,7 +52,16 @@ public class VoterDaoImpl implements VoterDao {
 	public void updateVoter(Voter voter) {
 		voterMap.put(voter.getId(), voter);
 	}
-	
-	
+
+	@Override
+	public Voter deleteVoter(int id) {
+		Voter voter = null;
+		if (voterMap.containsKey(id)) {
+			voter = voterMap.get(id);
+			voterMap.remove(id);
+			return voter;
+		}
+		throw new RuntimeException("Voter not found for the id: " + id);
+	}
 
 }

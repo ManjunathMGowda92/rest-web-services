@@ -13,4 +13,6 @@ public interface VoterService {
 	void addVoter(Voter voter);
 	
 	void updateVoter(Voter voter);
+	
+	Voter deleteVoterById(int id);
 }
