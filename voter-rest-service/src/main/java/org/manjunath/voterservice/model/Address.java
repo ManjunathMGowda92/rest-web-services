@@ -2,7 +2,10 @@ package org.manjunath.voterservice.model;
 
 import java.io.Serializable;
 
-public class Addresss implements Serializable{
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
+public class Address implements Serializable{
 	/**
 	 * 
 	 */
@@ -17,9 +20,9 @@ public class Addresss implements Serializable{
 	private String country;
 	private String zipCode;
 	
-	public Addresss() {}
+	public Address() {}
 
-	public Addresss(String doorNo, String street, String locality, String post, String taluk, String district,
+	public Address(String doorNo, String street, String locality, String post, String taluk, String district,
 			String state, String country, String zipCode) {
 		this.doorNo = doorNo;
 		this.street = street;
