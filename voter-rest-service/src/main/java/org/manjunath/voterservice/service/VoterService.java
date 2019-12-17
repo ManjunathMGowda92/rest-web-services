@@ -9,4 +9,6 @@ public interface VoterService {
 	List<Voter> getAllVoters();
 	
 	Voter findVoterById(int id);
+	
+	void addVoter(Voter voter);
 }

@@ -8,4 +8,6 @@ public interface VoterDao {
 	List<Voter> getAllVoters();
 	
 	Voter getVoterById(int id);
+	
+	void addVoter(Voter voter);
 }
