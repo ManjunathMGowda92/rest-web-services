@@ -1,0 +1,6 @@
+/target/
+
+/* Remove eclipse related files*/
+.classpath
+.project
+.settings
